@@ -1,23 +1,15 @@
-"use strict";
-console.log(2137);
-let xmpLink = 2332;
-const RT = 1500;
-const COLOR_RED = "#F00";
-const rat = {
-    name: "Recrent",
-    age: 32
+const numberOfFilms = +prompt('How many films have watched?');
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
 };
-console.log(rat);
-const rt = "b";
-rat.xt = "Shit";
-rat.rt = "231";
-rat["xtx"] = "Shix";
-console.log(rat["xt"]);
-console.log(rat.xtx);
-console.log(rat.rt);
-const ans = [];
-ans[0] = prompt("Youe Name?!", "");
-ans[1] = prompt("Youe Surname?!", "");
-ans[2] = prompt("Youe Age?!", "");
-document.write(ans);
-alert(`Hello! ${rat.name}`)
+const a = prompt('One of the last watched films?'),
+      b = prompt('How much rate it?'),
+      c = prompt('One of the last watched films?'),
+      d = prompt('How much rate it?');
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+console.log(personalMovieDB);
