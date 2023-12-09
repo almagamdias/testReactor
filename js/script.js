@@ -6,10 +6,13 @@ const personalMovieDB = {
     genres: [],
     private: false
 };
-const a = prompt('One of the last watched films?'),
-      b = prompt('How much rate it?'),
-      c = prompt('One of the last watched films?'),
-      d = prompt('How much rate it?');
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+for(let i = 0; i < 2; i++) {
+    const a = prompt('One of the last watched films?'), b = prompt('How much rate it?');
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('Done');
+    } else {
+        console.log('ERROR!!'); i--;
+    }
+}
 console.log(personalMovieDB);
