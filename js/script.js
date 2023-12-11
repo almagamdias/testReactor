@@ -37,10 +37,24 @@ const personalMovieDB = {
             console.log(personalMovieDB);
         }
     },
+    toggleVisibleDB: () => {
+        if (personalMovieDB.private) personalMovieDB.private = false;
+        else personalMovieDB.private = true;
+    },
     writeYourGenres: () => {
-        for (let i = 1; i <= 3; i++) {
-            personalMovieDB.genres[i-1] = prompt(`Your favourite genre in number ${i}`);
+        for (let i = 1; i < 2; i++) {
+            let genres = prompt(`Your favourite genres`).toLowerCase();
+            if (genres === '' || genres == null) {
+                console.log('Incorrect input or empty');
+                i--;
+            } else {
+                personalMovieDB.genres = genres.split(', ');
+                personalMovieDB.genres.sort();
+            }
         }
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Favourite genre ${i + 1} is ${item}`);
+        })
     }
 };
 //showMyDB(personalMovieDB.private);
